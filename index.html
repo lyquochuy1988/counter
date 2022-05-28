@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Multi Counters - creating any cunter, coundown and timer with triggers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!-- Demo styles only -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        #container h2,
+        p {
+            text-align: center
+        }
+        
+        body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 100%;
+            vertical-align: baseline;
+            line-height: normal;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+        
+        h1 {
+            font-size: 30px!important;
+            border-bottom: solid 1px #ddd!important;
+            padding-bottom: 24px!important;
+            margin-bottom: 24px!important;
+            color: #333
+        }
+        
+        #container {
+            text-align: center;
+            margin: auto;
+            max-width: 1200px;
+        }
+        
+        #container p {
+            font-size: 13px!important;
+            line-height: 18px;
+            padding-bottom: 20px
+        }
+        
+        #container h2 {
+            font-size: 18px;
+            font-weight: 200
+        }
+        
+        #chance {
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            line-height: 1.4em;
+            Font-size: 22px;
+            color: #ffa500;
+            margin-top: 30px;
+        }
+        
+        .wrap-counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .wrap-counter {
+                flex-direction: column-reverse;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            #mcounter-2.counter-number {
+                padding: 20px 0px !important;
+                font-size: 18px !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <p><img src="images/logoblue.png" width="414px" style="max-width: 100%;" /></p>
+        <p id='hideblock' style="padding:20px;">
+            <img src="images/disc.png" width="343px" style="max-width: 100%;" />
+        </p>
+
+        <!-- ========== START COPYING HERE ========== -->
+        <div class="wrap-counter">
+            <span id='mcounter-2' class="counter-number">			
+                {day}:{hour}:{min}:{sec}			
+            </span>
+            <p><img src="images/smiling-woman-headset-presentation-something.jpg" width="500px" style="max-width: 100%;" /></p>
+
+        </div>
+
+
+        <!-- ========== END COPYING HERE ========== -->
+
+
+        <p>
+            <a href="#"><img src="images/buynow.png" width="184px" style="max-width: 100%;" /></a>
+        </p>
+
+
+
+
+
+    </div>
+
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Multi Counters jQuery plugin -->
+    <script type="text/javascript" src="assets/js/jquery.multi-counters.min.js"></script>
+
+    <!-- Multi Counters invoke -->
+    <script>
+        $(document).ready(function() {
+            $('#mcounter-2').MultiCounter({
+                // Type of counter
+                mcType: ['Timer'],
+                // Values for Date
+                mcDate: [2022, 05, 28],
+                // Values for Timer
+                mcTimer: [0, 0, 1],
+                // Values for Counter
+                mcAmount: ['up', 15, 18],
+                mcSpeed: ['stable', 1, 10],
+                mcIncrement: ['stable', 1, 15],
+                // Counter cookies		
+                setCookie: false,
+                cookieDays: 1,
+                cookieName: 'mCounter-2',
+                // Style
+                mcPadding: '30px 50px',
+                mcBackground: 'none',
+                mcColor: 'red',
+                mcSize: '50px',
+                // mcTextSize: '30px',
+                // mcTextColor: 'red',
+                mcBorder: ['0px', 'solid', 'orange'],
+                // Target
+                mcTarget: true,
+                mcTargets: [
+                    // ['message', 'Hello, Game over!'],
+                    ['hideblock', '#hideblock'],
+                ]
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
