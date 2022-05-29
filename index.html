@@ -66,16 +66,11 @@
             margin-top: 30px;
         }
         
-        .wrap-counter {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        @media screen and (max-width: 600px) {
-            .wrap-counter {
-                flex-direction: column-reverse;
-            }
+        #container .offer-expires {
+            font-size: 22px !important;
+            font-weight: bold;
+            color: red;
+            margin: 0;
         }
         
         @media screen and (max-width: 400px) {
@@ -91,19 +86,20 @@
 <body>
 
     <div id="container">
-        <p><img src="images/logoblue.png" width="414px" style="max-width: 100%;" /></p>
-        <p id='hideblock' style="padding:20px;">
-            <img src="images/disc.png" width="343px" style="max-width: 100%;" />
+        <p><img src="images/logoblue.png" width="380px" style="max-width: 100%;" /></p>
+        <p class='hideblock' style="padding:20px;">
+            <img src="images/disc.png" width="260px" style="max-width: 100%;" />
         </p>
+        <p class="offer-expires hideblock">OFFER EXPIRES IN: </p>
 
         <!-- ========== START COPYING HERE ========== -->
-        <div class="wrap-counter">
-            <span id='mcounter-2' class="counter-number">			
-                {day}:{hour}:{min}:{sec}			
-            </span>
-            <p><img src="images/smiling-woman-headset-presentation-something.jpg" width="500px" style="max-width: 100%;" /></p>
+        <!-- <div class="wrap-counter"> -->
+        <span id='mcounter-2' class="counter-number">			
+            {day}:{hour}:{min}:{sec}			
+        </span>
+        <p><img src="images/smiling-woman-headset-presentation-something.jpg" width="500px" style="max-width: 100%;" /></p>
 
-        </div>
+        <!-- </div> -->
 
 
         <!-- ========== END COPYING HERE ========== -->
@@ -133,14 +129,14 @@
                 // Values for Date
                 mcDate: [2022, 05, 28],
                 // Values for Timer
-                mcTimer: [0, 0, 1],
+                mcTimer: [0, 23, 59],
                 // Values for Counter
                 mcAmount: ['up', 15, 18],
                 mcSpeed: ['stable', 1, 10],
                 mcIncrement: ['stable', 1, 15],
                 // Counter cookies		
                 setCookie: false,
-                cookieDays: 1,
+                cookieDays: 7,
                 cookieName: 'mCounter-2',
                 // Style
                 mcPadding: '30px 50px',
@@ -153,8 +149,8 @@
                 // Target
                 mcTarget: true,
                 mcTargets: [
-                    // ['message', 'Hello, Game over!'],
-                    ['hideblock', '#hideblock'],
+                    ['message', 'Sale has Ended. Regular Price $54'],
+                    ['hideblock', '.hideblock'],
                 ]
 
             });
